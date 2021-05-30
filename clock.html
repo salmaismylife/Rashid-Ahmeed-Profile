@@ -1,0 +1,248 @@
+<!-- Created by Karine -->
+
+
+
+<html> 
+ <head> 
+  <title>Clock</title>
+   <meta name="viewport" content="width=device-width,
+    initial-scale=1" /> <link rel="stylesheet" href="style.css" />
+    </head> 
+    
+<style>
+
+/* Created by Karine */
+
+
+
+* {
+  margin: 0;
+   padding: 0;
+    border: 0; 
+    } 
+body { 
+background-color: #424242
+ } 
+ .clock { 
+ height: 300px;
+  width: 300px;
+   background-color:#d2d2d2;
+    border-radius: 25px 25px;
+     border:5px
+      solid brown;
+      margin: auto;
+       position: absolute;
+        top: 0;
+         left: 0; 
+         bottom: 0; 
+         right: 0;
+          }
+.twelve { 
+position: relative; 
+width: 25px; 
+height: 5px; 
+left: 10; 
+top: 0; 
+right: 30px; 
+margin: 0 auto; 
+font-weight:bolder ;
+} 
+.One{
+position: absolute; 
+width: 0px; 
+height: 15px; 
+font-weight:bolder ;
+left:200; 
+top: 5; 
+right: 0; 
+margin: 20; 
+}
+.Two{
+position: absolute; 
+width: 0px; 
+height: 15px; 
+background:#dddddd; 
+left:250; 
+top: 60; 
+right: 0; 
+margin: 20; 
+font-weight:bolder ;
+}
+.three {
+ position: absolute;
+  width: 15px;
+   height: 3px; 
+ font-weight:bolder ;
+   top: 0;
+    bottom: 0; 
+    right: 0;
+     margin: auto 0; 
+     } 
+.four {
+ position: absolute;
+  width: 15px;
+   height: 3px;
+   top: 120;
+    bottom: 0; 
+    left:265;
+    right: 0;
+     margin: auto 0; 
+     font-weight:bolder ;
+     } 
+.five {
+ position: absolute;
+  width: 15px;
+   height: 3px;
+   top: 220;
+    bottom: 0; 
+    left:215;
+    right: 0;
+     margin: auto 0; 
+     font-weight:bolder ;
+     } 
+.six {
+ position: absolute;
+  width: 3px;
+   height: 15px; 
+   background:#dddddd; 
+   left: 0;
+   top:280px;
+    bottom: 0;
+     right: 0; 
+     margin: 0 auto;
+     font-weight:bolder ;
+      }
+.seven {
+ position: absolute;
+  width: 3px;
+   height: 15px; 
+   top:260;
+   left:0;
+    bottom: 0;
+     right:160; 
+     margin: 0 auto;
+     font-weight:bolder ;
+      }
+.eight{
+ position: absolute;
+  width: 3px;
+   height: 15px; 
+   top:210;
+   left:0;
+    bottom: 0;
+     right:255; 
+     margin: 0 auto;
+     font-weight:bolder ;
+      }
+ .nine {
+  position: absolute; 
+  width: 15px;
+   height: 3px;
+
+     top: 0;
+      bottom: 0; 
+      left: 0; 
+    margin: auto 0;
+    font-weight:bolder ;
+       }
+.ten{
+position:absolute ;
+    right:280px;
+    top:80px;
+    left:15px;
+    font-weight:bolder ;
+}
+.eleven{
+    position:absolute ;
+    right:215px;
+    top:25px;
+    font-weight:bolder ;
+}
+.center { 
+width: 10px; 
+height: 10px; 
+position: absolute; 
+left: 0;
+ right: 0; 
+ bottom: 0; 
+ top: 0; 
+ margin: auto; 
+ background: #000; 
+ border-radius: 100%; 
+ } 
+#seconds {
+ position: absolute; 
+ height: 100px;
+  width: 1px;
+   left: 0; 
+   right: 0;
+    bottom: 100px;
+     top: 0px;
+      margin: auto; 
+      background:#000; -webkit-transform-origin: bottom;
+       background: #fff000; 
+        border-radius:100%;
+       }
+ #minutes {
+  position: absolute; 
+  height: 130px;
+   width: 2px; 
+   left: 0;
+    right: 0;
+     bottom:130px;
+     top: 0px; 
+     margin: auto; 
+     background:rgb(0 0 250);  
+     -webkit-transform-origin: bottom;
+     border-radius:100%;
+     }
+ #hours {
+  position: absolute;
+   height: 80px; 
+   width: 6px; 
+   left: 0;
+    right: 0;
+     bottom: 80px; 
+     top: 0px;
+      margin: auto; 
+      background: #0face0; -webkit-transform-origin: bottom;
+     border-radius:100%; 
+       }
+</style>    
+    
+    <body>
+     <div class="clock"> 
+      <div id="hours"></div> 
+       <div id="minutes"></div>
+        <div id="seconds"></div> 
+         <div class="One">1</div>
+          <div class="Two">2</div>
+         <div class="three">3</div>
+        <div class="four">4</div>
+       <div class="five">5</div>
+      <div class="six">6</div>
+       <div class="seven">7</div>
+         <div class="eight">8</div>
+           <div class="nine">9</div>
+             <div class="ten">10</div>
+               <div class="eleven">11</div>
+              <div class="twelve">12</div>
+            <div class="center"></div> 
+          </div>
+     <script type="text/javascript" src="app.js"></script> 
+          </body>
+          <script>function moveHands() {
+ with (
+ new Date())
+  {
+  h = 30 * ((getHours() % 12) + getMinutes() / 60);
+ m = 6 * getMinutes();
+s = 6 * getSeconds();  
+document.getElementById("seconds").style.cssText = "-webkit-transform:rotate(" + s + "deg);";
+   document.getElementById("minutes").style.cssText = "-webkit-transform:rotate(" + m + "deg);";
+    document.getElementById("hours").style.cssText = "-webkit-transform:rotate(" + h + "deg);";
+     setTimeout(moveHands, 1000); 
+      } 
+      } 
+      window.onload = moveHands; </script>
+      </html>
