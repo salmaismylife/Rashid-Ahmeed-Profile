@@ -939,6 +939,7 @@ p {
             <label>Messege</label><br /><textarea class="msg input" id="b" name="loveto"></textarea>
             <br />
             <input type="button" class="submit" value="submit">
+		     </form>
         </div>
     </div>
 
@@ -961,6 +962,25 @@ $('#insert').click(function(){
 	);
 });
 
+	    
+	    
+$(document).ready(function() {
+            $(".b1").click(function(){
+                var her=$("#a").val();
+                var his=$("#b").val();
+                var comm=[];
+                var sum=0;
+                var new1=her+his;
+                var count=1;
+                var arr=[];
+                $(".res").css('visibility', 'visible');
+                if(her=="" || his==""){
+                    $("#p").text("Enter Valid Names.");
+                }
+                else{
+		
+		
+		}
 </script>
 
 
