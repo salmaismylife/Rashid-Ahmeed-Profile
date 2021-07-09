@@ -1,0 +1,384 @@
+﻿<!DOCTYPE html>
+<html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Rochester&display=swap" rel="stylesheet">
+    <script src=" https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
+    <title>Good Morning</title>
+
+
+    <style>
+                body {
+            background: #fffff0;
+            -webkit-animation: bgcolor 30s linear;
+        }
+        
+        @-webkit-keyframes bgcolor {
+            0% {
+                background: #000;
+            }
+            50% {
+                background: #0664ff;
+            }
+            100% {
+                background: #fffff0;
+            }
+        }
+        
+        h1 {
+            background: url(https://media3.giphy.com/media/2sYEunlo0weS9WKfXF/giphy.gif) 60% 60%;
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+            font-size: 100px;
+            text-align: center;
+            padding: 10px;
+            margin: 5px;
+        }
+        /* --------- Styling of sun -------------- */
+        
+        #sun {
+            background: radial-gradient(circle, #f80, #ff9);
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 1px solid #ff4;
+            box-shadow: 0px 0px 10px #ffc, -0px -0px 10px #ffc, -0px 0px 10px #ffc, 0px -0px 10px #ffc;
+            -webkit-transform: translate(80px, 60px);
+            -webkit-animation: glow 10s linear, sunsize 30s linear, sunbg 9s linear;
+        }
+        /* -----***+-+--+---++++++++++++++++++++++++ */
+        
+        @-webkit-keyframes sunbg {
+            0% {
+                background: radial-gradient(circle, #f80, #f80);
+            }
+            10% {
+                background: radial-gradient(circle, #ff8100, #f90);
+            }
+            20% {
+                background: radial-gradient(circle, #ff8400, #fa0);
+            }
+            30% {
+                background: radial-gradient(circle, #ff8600, #fb0);
+            }
+            40% {
+                background: radial-gradient(circle, #ff8800, #fc0);
+            }
+            50% {
+                background: radial-gradient(circle, #ff8a00, #fd0);
+            }
+            60% {
+                background: radial-gradient(circle, #ff8c00, #fe0);
+            }
+            70% {
+                background: radial-gradient(circle, #ff8e00, #ff0);
+            }
+            80% {
+                background: radial-gradient(circle, #ff9100, #ff3);
+            }
+            90% {
+                background: radial-gradient(circle, #ff9300, #ff6);
+            }
+            100% {
+                background: radial-gradient(circle, #ff9500, #ff9);
+            }
+        }
+        /* /////////////////////////////////// */
+        
+        @-webkit-keyframes glow {
+            0% {
+                box-shadow: 0 0 5px #ff0, 0 0 40px #00f, 0 0 100px #fff;
+                -webkit-transform: translate(120px, 100px);
+            }
+            50% {
+                box-shadow: 0 0 60px #fff, 0 0 5px #ccf;
+                -webkit-transform: translate(80px, 100px);
+            }
+        }
+        /* ///////////////////////////////////// */
+        
+        @-webkit-keyframes sunsize {
+            0% {
+                width: 30px;
+                height: 30px;
+            }
+            15% {
+                width: 150px;
+                height: 150px;
+            }
+            100% {
+                width: 200px;
+                height: 200px;
+            }
+        }
+        /* ---------------- text styling -------------------------- */
+        
+        p {
+            color: white;
+            font-size: 2.8em;
+            padding: 10px;
+            position: absolute;
+            text-align: center;
+            border-radius: 20px;
+            -webkit-transform: translate(3px, 110px);
+            -webkit-animation: tborder 1s linear infinite, trans 3s;
+        }
+        /* ///////////////////////////////////* */
+        
+        @-webkit-keyframes tborder {
+            0% {
+                border: 4px dotted cyan;
+                color: black;
+            }
+            50% {
+                border: 4px dotted black;
+                color: red;
+            }
+            100% {
+                border: 4px dotted cyan;
+                color: white;
+            }
+        }
+        /* ///////7///////////////////// - */
+        
+        @-webkit-keyframes trans {
+            0% {
+                -webkit-transform: translate(5px, 400px);
+            }
+            100% {
+                -webkit-transform: translate(5px, 110px);
+            }
+            /* ---------- Styling of round ring from here --------- */
+            #round {
+                border-radius: 50%;
+                /* -webkit-transform:translate(-50px, -30px);
+    (55px, 74px); */
+                position: absolute;
+                animation: round 1s linear infinite;
+            }
+            @-webkit-keyframes round {
+                0% {
+                    -webkit-transform: translate(50px, 74px);
+                    border: 5px solid red;
+                    width: 300px;
+                    height: 300px;
+                }
+                100% {
+                    -webkit-transform: translate(-50px, -30px);
+                    border: 0px solid #000;
+                    width: 400px;
+                    height: 400px;
+                }
+            }
+            body {
+                background: #fffff0;
+                -webkit-animation: bgcolor 10s linear;
+            }
+            @-webkit-keyframes bgcolor {
+                0% {
+                    background: #000;
+                }
+                50% {
+                    background: #0664ff;
+                }
+                100% {
+                    background: #fffff0;
+                }
+            }
+            /* --------- Styling of sun -------------- */
+            #sun {
+                background: radial-gradient(circle, #f80, #ff9);
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+                border: 1px solid #ff4;
+                box-shadow: 0px 0px 10px #ffc, -0px -0px 10px #ffc, -0px 0px 10px #ffc, 0px -0px 10px #ffc;
+                -webkit-transform: translate(80px, 60px);
+                -webkit-animation: glow 10s linear, sunsize 30s linear, sunbg 9s linear;
+            }
+            /* -----***+-+--+---++++++++++++++++++++++++ */
+            @-webkit-keyframes sunbg {
+                0% {
+                    background: radial-gradient(circle, #f80, #f80);
+                }
+                10% {
+                    background: radial-gradient(circle, #ff8100, #f90);
+                }
+                20% {
+                    background: radial-gradient(circle, #ff8400, #fa0);
+                }
+                30% {
+                    background: radial-gradient(circle, #ff8600, #fb0);
+                }
+                40% {
+                    background: radial-gradient(circle, #ff8800, #fc0);
+                }
+                50% {
+                    background: radial-gradient(circle, #ff8a00, #fd0);
+                }
+                60% {
+                    background: radial-gradient(circle, #ff8c00, #fe0);
+                }
+                70% {
+                    background: radial-gradient(circle, #ff8e00, #ff0);
+                }
+                80% {
+                    background: radial-gradient(circle, #ff9100, #ff3);
+                }
+                90% {
+                    background: radial-gradient(circle, #ff9300, #ff6);
+                }
+                100% {
+                    background: radial-gradient(circle, #ff9500, #ff9);
+                }
+            }
+            /* /////////////////////////////////// */
+            @-webkit-keyframes glow {
+                0% {
+                    box-shadow: 0 0 5px #ff0, 0 0 40px #00f, 0 0 100px #fff;
+                    -webkit-transform: translate(120px, 100px);
+                }
+                50% {
+                    box-shadow: 0 0 60px #fff, 0 0 5px #ccf;
+                    -webkit-transform: translate(80px, 100px);
+                }
+            }
+            /* ///////////////////////////////////// */
+            @-webkit-keyframes sunsize {
+                0% {
+                    width: 30px;
+                    height: 30px;
+                }
+                15% {
+                    width: 150px;
+                    height: 150px;
+                }
+                100% {
+                    width: 200px;
+                    height: 200px;
+                }
+            }
+            /* ---------------- text styling -------------------------- */
+            p {
+                color: white;
+                font-size: 2.8em;
+                padding: 10px;
+                position: absolute;
+                text-align: center;
+                border-radius: 20px;
+                -webkit-transform: translate(3px, 110px);
+                -webkit-animation: tborder 1s linear infinite, trans 3s;
+            }
+            /* ///////////////////////////////////* */
+            @-webkit-keyframes tborder {
+                0% {
+                    border: 4px dotted cyan;
+                    color: black;
+                }
+                50% {
+                    border: 4px dotted black;
+                    color: red;
+                }
+                100% {
+                    border: 4px dotted cyan;
+                    color: white;
+                }
+            }
+            /* ///////7///////////////////// - */
+            @-webkit-keyframes trans {
+                0% {
+                    -webkit-transform: translate(5px, 400px);
+                }
+                100% {
+                    -webkit-transform: translate(5px, 110px);
+                }
+                /* ---------- Styling of round ring from here --------- */
+                #round {
+                    border-radius: 50%;
+                    /* -webkit-transform:translate(-50px, -30px);
+    (55px, 74px); */
+                    position: absolute;
+                    animation: round 1s linear infinite;
+                }
+                @-webkit-keyframes round {
+                    0% {
+                        -webkit-transform: translate(50px, 74px);
+                        border: 5px solid red;
+                        width: 300px;
+                        height: 300px;
+                    }
+                    100% {
+                        -webkit-transform: translate(-50px, -30px);
+                        border: 0px solid #000;
+                        width: 400px;
+                        height: 400px;
+                    }
+                }
+                .fromm {
+                    font-size: 200px;
+                }
+    </style>
+</head>
+
+<body onload="func()">
+
+
+    <audio id="music" loop="true">
+            <source src="ya.mp3" type="audio/mp3"/>
+        </audio>
+    <script>
+        var s = document.getElementById('loader')
+
+        function func() {
+            loader.style.display = 'none';
+        }
+    </script>
+    <script>
+        // Created by 🎸 Rashid 🎸
+
+        window.addEventListener('DOMContentLoaded', (event) => {
+            Swal.fire({
+                title: ' 🌸 Happy 🌸 🌸 Good Morning🌸 For You'
+            })
+        });
+        window.addEventListener("mouseover", play);
+        window.addEventListener("click", play);
+
+        function play() {
+            document.getElementById("music").play();
+        }
+    </script>
+
+
+
+
+    <div id="bgcolor">
+        <div id="round"></div>
+        <div id="sun"></div>
+        <p>Good Morning</p> <br><br><br><br><br><br><br><br><br><br><br>
+        <div>
+            <p> <span id="from">from</span> Rashid &#9997; </p>
+        </div>
+    </div>
+    <div>
+        <h1>You</h1>
+    </div>
+    <script>
+        function PageReload() {
+            location.reload();
+        }
+        setInterval(PageReload, 19000);
+    </script>
+    <script>
+        setTimeout(function() {
+            window.location.href = 'wish.php';
+        }, 19000);
+    </script>
+</body>
+
+</html>
