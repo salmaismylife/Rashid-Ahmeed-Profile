@@ -346,13 +346,36 @@ button{
         <div class="cover">
         
             <figure class="front">
-            <button>Open Card</button>
+            <button onclick="playa()">Open Card</button>
             <div class="create"><h2>&copy Made By Rashid</h2></div>
             </figure>
             <figure class="back"></div>
         </figure>
         
-    </div>
+    </div><audio id="music" loop="false">
+
+            <source src="takbir.mp3" type="audio/mp3"/>
+
+        </audio>
       </div>  
     </body>
+<script>
+
+
+
+
+
+
+
+
+
+
+
+        function playa() {
+
+            document.getElementById("music").play();
+
+        }
+
+</script>
 </html>
