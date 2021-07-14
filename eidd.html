@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Happy Eid</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">  
+      
+      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        
+    </head>
+  <style>
+  
+  
+*{margin:0;
+    padding:0;
+    box-sizing:border-box ;
+}
+
+body {
+    background:linear-gradient(22deg,#fff,#333);
+}
+section{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background-color:gray;
+    overflow:hidden;
+    background:linear-gradient(#23074d,#cc5333);
+   border-radius:20px;
+}
+
+
+
+.svg-icon {width:2.5em;
+    height:2.5em;
+    margin-top:50px; 
+    margin-left:200px;
+}
+
+ .svg-icon path, .svg-icon polygon, .svg-icon rect { fill:#F5F3CE;} 
+ 
+ .svg-icon circle {fill:yellow; stroke:yellow; stroke-width:1; }
+
+
+.content{
+    position:absolute;
+    width:100%;
+    height:100%;
+    
+}
+.content img{
+    width:30px;
+    height:40px;
+}
+.content div{
+    display:block;
+    position:absolute;
+}
+.content div:nth-child(1){
+    left:10%;
+    animation:animate 15s linear infinite;
+    animation-delay:-7s; 
+}
+
+.content div:nth-child(1){
+    left:20%;
+    animation:animate 20s linear infinite;
+    animation-delay:-5s;    }
+    
+    .content div:nth-child(2){
+    left:30%;
+   animation:animate 22s linear infinite; 
+   animation-delay:-3s; }
+    .content div:nth-child(3){
+    left:40%;
+   animation:animate 25s linear infinite; 
+  animation-delay:-9s;  }
+    
+.content div:nth-child(4){
+    left:50%;
+   animation:animate 29s linear infinite;
+   animation-delay:-2s; 
+    }
+    
+   .content div:nth-child(5){
+    left:60%;
+    animation:animate 27s linear infinite;
+    animation-delay:-1s; 
+    }
+    
+    .content div:nth-child(6){
+    left:70%;
+   animation:animate 25s linear infinite;
+   animation-delay:-6s; 
+   
+    }
+    
+   .content div:nth-child(7){
+    left:80%;
+    animation:animate 23s linear infinite;
+    animation-delay:-4s; 
+    
+    }
+    
+   .content div:nth-child(8){
+    left:90%;
+    animation:animate 21s linear infinite;
+    animation-delay:-3s; 
+    }
+   
+   .content div:nth-child(9){
+    left:0%;
+    animation:animate 19s linear infinite;
+    animation-delay:-5s; 
+    
+    }
+    
+   .content div:nth-child(10){
+    left:10%;
+    animation:animate 16s linear infinite;
+    
+    animation-delay:-1s; 
+    }  
+      
+    
+   @keyframes animate{
+   
+       0%{top:-10%;
+       opacity:0;
+     transform:rotateY(0deg)
+       translateX(0px)  }
+       
+       10%{
+       opacity:0.8;}
+       
+       
+       50%{
+       opacity:0.9;}
+       
+       
+       
+       100%{top:100%;
+       opacity:1;
+       transform:rotateY(45deg)
+       translateX(40px)}
+   }  
+    
+
+.content2{
+    transform:scale(1.5)
+    rotate(-180deg);
+    
+}
+.content3{
+    filter:blur(1px);
+    transform:rotateZ(80deg);
+}
+.content4{
+    transform:rotateX(30deg);
+}
+h1{
+    font-size:34px;
+    text-shadow:15px 15px 10px #333;
+    left:20px;
+    top:210px;
+    position:absolute ;
+    font-family:fantasy;
+    color:#fff;
+    border-bottom:2px solid #fff;
+    border-left:22px solid #fff;
+    border-right:22px solid #fff;
+    border-left-color:crimson;
+    border-right-color:crimson;
+    border-bottom-color:skyblue;
+    border-radius:33px;
+}
+
+
+.container{
+    width:300px;
+    height:510px;
+    background-color:lightgray;
+    position:relative;
+    display:block;
+    perspective:1000px;
+    margin:20px auto;
+    border-radius:20px;
+    
+
+}
+.cover{
+    width:300px;
+    height:510px;
+    position:absolute;
+    background-color:#333;
+    transform: rotateY(0deg);
+    transform-origin:left;
+    transform-style:preserve-3d;
+    transition:transform 5s ease-in;
+    border-radius:20px;
+}
+.cover:hover{
+    transform:rotateY(-180deg);
+}
+
+figure{
+    display:block;
+    position:absolute;
+    backface-visibility:hidden;
+    width:100%;
+    height:100%;
+}
+
+
+.front{
+     background:#85324a;
+     border-radius:20px;
+ 
+    }
+button{
+    width:100px;
+    height:50px;
+    margin-left:95px;
+    margin-top:200px;
+    display:block;
+    padding:5px 5px;
+    border-radius:23px;
+    background: linear-gradient(145deg, #8e364f, #782d43); 
+    box-shadow: 20px 20px 31px #441a26, -20px -20px 31px #c64b6e;
+    outline:none;
+    border:none;
+    color:#fff;
+    font-weight:700;
+    
+}
+.create{
+    margin-top:210px;
+    margin-left:103px;
+    display:block;
+    font-size:12px;
+    color:#fff;
+    font-variant:small-caps ;
+}
+.create:first-letter{
+    color:gray;
+}
+  
+  </style>
+    
+    <body>
+    <div class="container">
+    
+    <section>
+    <svg class="svg-icon" viewBox="0 0 20 20">
+                            <path fill="none" d="M10.544,8.717l1.166-0.855l1.166,0.855l-0.467-1.399l1.012-0.778h-1.244L11.71,5.297l-0.466,1.244H10l1.011,0.778L10.544,8.717z M15.986,9.572l-0.467,1.244h-1.244l1.011,0.777l-0.467,1.4l1.167-0.855l1.165,0.855l-0.466-1.4l1.011-0.777h-1.244L15.986,9.572z M7.007,6.552c0-2.259,0.795-4.33,2.117-5.955C4.34,1.042,0.594,5.07,0.594,9.98c0,5.207,4.211,9.426,9.406,9.426c2.94,0,5.972-1.354,7.696-3.472c-0.289,0.026-0.987,0.044-1.283,0.044C11.219,15.979,7.007,11.759,7.007,6.552 M10,18.55c-4.715,0-8.551-3.845-8.551-8.57c0-3.783,2.407-6.999,5.842-8.131C6.549,3.295,6.152,4.911,6.152,6.552c0,5.368,4.125,9.788,9.365,10.245C13.972,17.893,11.973,18.55,10,18.55 M19.406,2.304h-1.71l-0.642-1.71l-0.642,1.71h-1.71l1.39,1.069l-0.642,1.924l1.604-1.176l1.604,1.176l-0.642-1.924L19.406,2.304z"></path>
+                        </svg>
+
+    
+    <h1>Eid Mubarak</h1>
+    
+    
+    <div class="content" >
+       
+       
+        
+            <div><img src="https://i.ibb.co/kxB7Qhg/1596211610130.png"/></div>
+           <div> <img src="https://i.ibb.co/xC5vrzW/1596211684991.png"   /></div>
+           <div><img src="https://i.ibb.co/Ltbnmsz/1596211797099.png"   /></div>
+            <div><img src="https://i.ibb.co/nRjMwRt/1596211824836.png"   /></div>
+          <div><img src="https://i.ibb.co/dc3XM1y/1596211647527.png"   /></div>
+            <div><img src="https://i.ibb.co/Ltbnmsz/1596211797099.png"   /></div>
+           <div><img src="https://i.ibb.co/8zddDY9/1596212457807.png"   /></div>
+           <div><img src="https://i.ibb.co/nPPTMxm/1596212485001.png"   /></div>
+           <div><img src="https://i.ibb.co/8zddDY9/1596212457807.png"   /></div>
+           <div> <img src="https://i.ibb.co/8zddDY9/1596212457807.png"   /></div>
+      
+       </div>
+       
+       
+       <div class="content content2" >
+       
+       
+        
+            <div><img src="https://i.ibb.co/kxB7Qhg/1596211610130.png"/></div>
+           
+            <div><img src="https://i.ibb.co/Ltbnmsz/1596211797099.png"   /></div>
+           <div><img src="https://i.ibb.co/8zddDY9/1596212457807.png"   /></div>
+           <div><img src="https://i.ibb.co/nPPTMxm/1596212485001.png"   /></div>
+           <div><img src="https://i.ibb.co/8zddDY9/1596212457807.png"   /></div>
+           <div> <img src="https://i.ibb.co/8zddDY9/1596212457807.png"   /></div>
+           <div> <img src="https://i.ibb.co/xC5vrzW/1596211684991.png"   /></div>
+           <div><img src="https://i.ibb.co/Ltbnmsz/1596211797099.png"   /></div>
+            <div><img src="https://i.ibb.co/nRjMwRt/1596211824836.png"   /></div>
+          <div><img src="https://i.ibb.co/dc3XM1y/1596211647527.png"   /></div>
+      
+       </div>
+       
+       
+       <div class="content content3" >
+       
+       
+        
+            <div><img src="https://i.ibb.co/kxB7Qhg/1596211610130.png"/></div>
+           
+            <div><img src="https://i.ibb.co/Ltbnmsz/1596211797099.png"   /></div>
+           <div><img src="https://i.ibb.co/8zddDY9/1596212457807.png"   /></div>
+           <div><img src="https://i.ibb.co/nPPTMxm/1596212485001.png"   /></div>
+           <div><img src="https://i.ibb.co/8zddDY9/1596212457807.png"   /></div>
+           <div> <img src="https://i.ibb.co/8zddDY9/1596212457807.png"   /></div>
+           <div> <img src="https://i.ibb.co/xC5vrzW/1596211684991.png"   /></div>
+           <div><img src="https://i.ibb.co/Ltbnmsz/1596211797099.png"   /></div>
+            <div><img src="https://i.ibb.co/nRjMwRt/1596211824836.png"   /></div>
+          <div><img src="https://i.ibb.co/dc3XM1y/1596211647527.png"   /></div>
+      
+       </div>
+           
+       <div class="content content4" >
+       
+       <div> <img src="https://i.ibb.co/8zddDY9/1596212457807.png"   /></div>
+           <div> <img src="https://i.ibb.co/xC5vrzW/1596211684991.png"   /></div>
+           <div><img src="https://i.ibb.co/Ltbnmsz/1596211797099.png"   /></div>
+            <div><img src="https://i.ibb.co/nRjMwRt/1596211824836.png"   /></div>
+          <div><img src="https://i.ibb.co/dc3XM1y/1596211647527.png"   /></div>
+      
+        
+            <div><img src="https://i.ibb.co/kxB7Qhg/1596211610130.png"/></div>
+           
+            <div><img src="https://i.ibb.co/Ltbnmsz/1596211797099.png"   /></div>
+           <div><img src="https://i.ibb.co/8zddDY9/1596212457807.png"   /></div>
+           <div><img src="https://i.ibb.co/nPPTMxm/1596212485001.png"   /></div>
+           <div><img src="https://i.ibb.co/8zddDY9/1596212457807.png"   /></div>
+           
+       </div>
+       
+       
+       
+       
+       
+        
+    </section>
+    
+        
+    
+    
+        <div class="cover">
+        
+            <figure class="front">
+            <button>Open Card</button>
+            <div class="create"><h2>&copy Made By Rashid</h2></div>
+            </figure>
+            <figure class="back"></div>
+        </figure>
+        
+    </div>
+      </div>  
+    </body>
+</html>
