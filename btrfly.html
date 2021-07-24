@@ -1,0 +1,419 @@
+<!-- Created by 🎸 Rashid 🎸 -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link href="https://fonts.googleapis.com/css?family=Rochester&display=swap" rel="stylesheet">
+     <script src=" https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css"> 
+    <title>Butterfly Garden by Rashid</title>
+</head>
+<style>
+  /* Created by 🎸 Rashid🎸 */
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+#loader{
+    height:100vh;
+    width:100%;
+    background-color: black;
+
+
+    padding: 0px;
+    margin: auto;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    text-align:center ;
+    font-family:rochester,serif
+}
+html,body{
+    width: 100%;
+    height: 100%;   
+}
+body{
+    background: url('https://www.dropbox.com/s/blhw5y694ydsojv/bg6.jpg?dl=1');
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+    overflow:hidden ;
+    background-position:cover;
+}
+#container{
+    width: 290px;
+    height: 263px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+}
+#butterfly{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotate3d(2,1,-1, 55deg);
+}
+.fpart{
+    position: absolute;
+    background-size: 100% 100%;
+}
+#butterfly .body{
+    width: 26%;
+    height: 80%;
+    left: 50%;
+    bottom: 15%;
+    transform: translateX(-50%);
+    background-image: url('https://www.dropbox.com/s/hoc7cc4v51vx306/body.png?dl=1');
+}
+#butterfly .l{
+    width: calc(50% - 3px);
+    height: 100%;
+    left: 0px;
+    animation: lanim 2.8s ease-in-out infinite;
+    transform-origin: right;
+    background-image: url('https://www.dropbox.com/s/z68zxcvh0odyi1t/lwing.png?dl=1');
+   
+}
+#butterfly .r{
+    width: calc(50% - 3px);
+    height: 100%;
+    right: 0px;
+    animation: ranim 2.8s ease-in-out infinite;
+    transform-origin: left;
+    background-image: url('https://www.dropbox.com/s/xarta9cyl4wh2sr/rwing.png?dl=1');
+}
+@keyframes lanim {
+    0%{
+       transform: rotate3d(0,1,0, 85deg);
+    }
+    50%{
+       transform: rotate3d(0,1,0, 20deg);
+    }
+    100%{
+       transform: rotate3d(0,1,0, 85deg);
+    }
+}
+@keyframes ranim {
+    0%{
+       transform: rotate3d(0,1,0, -85deg);
+    }
+    50%{
+       transform: rotate3d(0,1,0, -20deg);
+    }
+    100%{
+       transform: rotate3d(0,1,0, -85deg);
+    }
+}
+.rain{
+    top:-18px;
+    font-size:15px;
+    opacity:0.8;
+    animation:som 5s infinite ease-in;
+    position:absolute ;
+}
+@keyframes som{
+    0%{
+        top:-500px;
+        transform:translateY(0px);
+    }
+    100%{
+        top:100vh;
+        transform:translateY(100px);
+    }
+}
+.rain:nth-child(1){
+    left:10%;
+    animation-duration:9s;
+}
+.rain:nth-child(2){
+    left:20%;
+    animation-duration:5s;
+    animation-delay:3s;
+}
+.rain:nth-child(3){
+    left:30%;
+    animation-duration:10s;
+    animation-delay:4s;
+}
+.rain:nth-child(4){
+    left:40%;
+    animation-duration:7s;
+    animation-delay:5s;
+}
+.rain:nth-child(5){
+    left:50%;
+    animation-duration:6s;
+    animation-delay:0s;
+}
+.rain:nth-child(6){
+    left:60%;
+    animation-duration:8s;
+    animation-delay:6s;
+}
+.rain:nth-child(7){
+    left:70%;
+    animation-duration:7s;
+    animation-delay:3s;
+}
+.rain:nth-child(8){
+    left:80%;
+    animation-duration:6s;
+    animation-delay:0s;
+}
+.rain:nth-child(9){
+    left:75%;
+    animation-duration:10s;
+    animation-delay:6s;
+}
+.rain:nth-child(10){
+    left:5%;
+    animation-duration:6s;
+    animation-delay:1s;
+}
+.rain:nth-child(11){
+    left:10%;
+    animation-duration:9s;
+}
+.rain:nth-child(12){
+    left:20%;
+    animation-duration:7s;
+    animation-delay:3s;
+}
+.rain:nth-child(13){
+    left:30%;
+    animation-duration:10s;
+    animation-delay:1s;
+}
+.rain:nth-child(14){
+    left:40%;
+    animation-duration:7s;
+    animation-delay:4s;
+}
+.rain:nth-child(15){
+    left:50%;
+    animation-duration:6s;
+    animation-delay:0s;
+}
+.rain:nth-child(16){
+    left:60%;
+    animation-duration:8s;
+    animation-delay:6s;
+}
+.rain:nth-child(17){
+    left:70%;
+    animation-duration:7s;
+    animation-delay:3s;
+}
+.rain:nth-child(18){
+    left:80%;
+    animation-duration:6s;
+    animation-delay:0s;
+}
+.rain:nth-child(19){
+    left:75%;
+    animation-duration:10s;
+    animation-delay:6s;
+}
+.rain:nth-child(20){
+    left:50%;
+    animation-duration:9s;
+    animation-delay:1s;
+}
+.rain:nth-child(21){
+    left:5%;
+    animation-duration:11s;
+}
+.rain:nth-child(22){
+    left:30%;
+    animation-duration:5s;
+    animation-delay:3s;
+}
+.rain:nth-child(23){
+    left:30%;
+    animation-duration:9s;
+    animation-delay:1s;
+}
+.rain:nth-child(24){
+    left:40%;
+    animation-duration:7s;
+    animation-delay:4s;
+}
+.rain:nth-child(25){
+    left:50%;
+    animation-duration:8s;
+    animation-delay:1s;
+}
+.rain:nth-child(26){
+    left:60%;
+    animation-duration:6s;
+    animation-delay:2s;
+}
+.rain:nth-child(27){
+    left:70%;
+    animation-duration:7s;
+    animation-delay:3s;
+}
+.rain:nth-child(28){
+    left:80%;
+    animation-duration:6s;
+    animation-delay:2s;
+}
+.rain:nth-child(29){
+    left:75%;
+    animation-duration:5s;
+    animation-delay:4s;
+}
+.rain:nth-child(30){
+    left:5%;
+    animation-duration:9s;
+    animation-delay:1s;
+}
+.rain:nth-child(31){
+    left:10%;
+    animation-duration:6s;
+}
+.rain:nth-child(32){
+    left:20%;
+    animation-duration:5s;
+    animation-delay:3s;
+}
+.rain:nth-child(33){
+    left:30%;
+    animation-duration:10s;
+    animation-delay:1s;
+}
+.rain:nth-child(34){
+    left:40%;
+    animation-duration:7s;
+    animation-delay:4s;
+}
+.rain:nth-child(35){
+    left:50%;
+    animation-duration:6s;
+    animation-delay:2s;
+}
+.rain:nth-child(36){
+    left:60%;
+    animation-duration:8s;
+    animation-delay:2s;
+}
+.rain:nth-child(37){
+    left:70%;
+    animation-duration:7s;
+    animation-delay:3s;
+}
+.rain:nth-child(38){
+    left:80%;
+    animation-duration:6s;
+    animation-delay:1s;
+}
+.rain:nth-child(39){
+    left:75%;
+    animation-duration:10s;
+    animation-delay:6s;
+}
+.rain:nth-child(40){
+    left:50%;
+    animation-duration:5s;
+    animation-delay:1s;
+}
+
+  
+</style>
+<body onload="func()">
+   <div id="loader">
+       Loading...
+   </div>
+    <div id="container">
+       <div id="butterfly">
+           <div class="body fpart"></div>
+           <div class="l fpart"></div>
+           <div class="r fpart"></div>
+       </div>
+    </div>
+    <div id="container">
+       <div id="butterfly">
+           <div class="body fpart"></div>
+           <div class="l fpart"></div>
+           <div class="r fpart"></div>
+       </div>
+       </div>
+    <div class="rainflower">
+            <div class="rain">🌺</div>
+            <div class="rain">🏵️</div>
+            <div class="rain">🌼</div>
+            <div class="rain">🌸</div>
+            <div class="rain">🌺</div>
+            <div class="rain">🏵️</div>
+            <div class="rain">🌼</div>
+            <div class="rain">🌸</div>
+            <div class="rain">🌺</div>
+            <div class="rain">🏵️</div>
+            <div class="rain">🌼</div>
+            <div class="rain">🌸</div>
+            <div class="rain">🌺</div>
+            <div class="rain">🏵️</div>
+            <div class="rain">🌼</div>
+            <div class="rain">🌸</div>
+            <div class="rain">🌺</div>
+            <div class="rain">🏵️</div>
+            <div class="rain">🌼</div>
+            <div class="rain">🌸</div>
+            <div class="rain">🌺</div>
+            <div class="rain">🏵️</div>
+            <div class="rain">🌼</div>
+            <div class="rain">🌸</div>
+            <div class="rain">🌺</div>
+            <div class="rain">🏵️</div>
+            <div class="rain">🌼</div>
+            <div class="rain">🌸</div>
+            <div class="rain">🌺</div>
+            <div class="rain">🏵️</div>
+            <div class="rain">🌼</div>
+            <div class="rain">🌸</div>
+            <div class="rain">🌺</div>
+            <div class="rain">🏵️</div>
+            <div class="rain">🌼</div>
+            <div class="rain">🌸</div>
+            <div class="rain">🌺</div>
+            <div class="rain">🏵️</div>
+            <div class="rain">🌼</div>
+            <div class="rain">🌸</div>
+        </div>
+        <audio id="music" loop="true">
+            <source src="https://www.dropbox.com/s/rxcigadmqeomdso/Butterfly_ringtone_jass_manak_new_song_ringtone_butterfly_song_ringtone__butterfly_ringtone%28256k%29.mp3?dl=1" type="audio/mp3"/>
+        </audio>
+    <script>
+        var s= document.getElementById('loader')
+        function func(){
+        loader.style.display='none';
+        }
+    </script>
+    <script>
+      // Created by 🎸 Rashid 🎸
+
+
+
+window.addEventListener('DOMContentLoaded', (event) => {
+    Swal.fire({
+  title: ' 🌸 Butterfly with 🌸 🌸 garden 🌸 '
+  })
+});
+window.addEventListener("mouseover",play);
+window.addEventListener("click",play);
+function play() { document.getElementById("music").play();
+}
+      
+      
+      
+    </script>
+</body>
+</html>
