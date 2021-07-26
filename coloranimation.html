@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Beautiful Colour Animation</title>
+  
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<style>
+  #canvas1
+{
+position: absolute;
+background: #111;
+width: 100%;
+height: 100%;
+top: 0%;
+left: 0%;
+}
+  
+</style>
+
+
+<script>
+  
+  
+
+
+
+window.onload = function(){
+const canvas = document.getElementById('canvas1');
+const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+const particlesArray = [];
+let hue = 0;
+
+window.addEventListener('resize',function(){
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+});
+
+const touch = {
+x:undefined,
+y:undefined,
+};
+
+
+//For click support...
+canvas.addEventListener('click',function(event){
+touch.x = event.x;
+touch.y = event.y;
+for(i = 0;i < 2.5; i++){
+  particlesArray.push(new particle());
+}
+});
+//End of click support...
+
+//For mouse support...
+canvas.addEventListener('mousemove',function(event){
+touch.x = event.x;
+touch.y = event.y;
+for(i = 0;i < 2.5; i++){
+  particlesArray.push(new particle());
+}
+});
+//End of mouse support...
+
+//For touch support...
+canvas.addEventListener('touchmove',function(event){
+touch.x = event.touches[0].clientX;
+touch.y = event.touches[0].clientY;
+for(i = 0;i < 2.5; i++){
+ particlesArray.push(new particle());
+}
+});
+//End of touch support...
+
+ class particle{
+   constructor(){
+     this.x = touch.x;
+     this.y = touch.y;
+     this.size = Math.random() * 15 + 1;
+     this.speedX = Math.random() * 3 -1.5;
+     this.speedY = Math.random() * 3 -1.5;
+    this.color = 'hsl('+hue+',+100%,50%)';
+
+   } 
+   
+   update(){
+     this.x += this.speedX;
+     this.y += this.speedY;
+     if(this.size > 0.2)this.size -= 0.1;
+   }
+   
+   //Circle(particles)buildup...
+   draw(){
+ctx.fillStyle = this.color;
+ctx.beginPath();
+ctx.arc(this.x,this.y, this.size, 0, Math.PI * 2);
+ctx.fill();
+   }
+ //End of Circle(particles)buildup...
+ }
+
+function handleParticles(){
+  for(let i = 0; i < particlesArray.length; i++){
+    particlesArray[i].update();
+    particlesArray[i].draw();
+    // particle line drawn
+    for(let j = i; j < particlesArray.length; j++){
+      const dx = particlesArray[i].x - particlesArray[j].x;
+      const dy = particlesArray[i].y - particlesArray[j].y;
+      const distance = Math.sqrt(dx * dx + dy * dy);
+      if(distance < 50){
+        ctx.beginPath();
+        ctx.strokeStyle = particlesArray[i].color;
+        ctx.lineWidth = 0.5;
+        ctx.moveTo(particlesArray[i].x,particlesArray[i].y);
+        ctx.lineTo(particlesArray[j].x,particlesArray[j].y);
+        ctx.stroke();
+        ctx.closePath();
+        //End of particle line drawn
+      }
+    }
+ //Deletion of particles <=0.3 section...
+    if(particlesArray[i].size <= 0.3){
+      particlesArray.splice(i, 1);
+ //Deletion of particles <=0.3 section...
+    }
+
+  }
+};
+
+
+function animate(){
+  ctx.fillStyle = 'rgba(0,0,0,0.1)';
+  ctx.fillRect(0,0,canvas.width,canvas.height);
+  hue += 2;
+  handleParticles();
+  requestAnimationFrame(animate);
+}
+
+animate();
+
+};
+  
+</script>
+<body>
+  <canvas id="canvas1"></canvas>
+
+  <script src="main.js"></script>
+</body>
+</html>
