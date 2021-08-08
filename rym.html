@@ -1,0 +1,131 @@
+<!-- Created by Priyangshu -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mind reader</title>
+    </head>
+    <style>
+      /* Created by Priyangshu */
+
+
+
+body {
+    
+}
+
+#a {
+    text-align: center;
+    font-size: 8vmin;
+    margin-top: 20vmin;
+    margin-left: 7vmin;
+    margin-right: 7vmin;
+    font-family: monospace;
+}
+
+#btn {
+    display: none;
+    font-size: 7vmin;
+    padding: 2vmin 4vmin;
+    border-radius: 2vmin;
+    margin-top: 15vmin;
+    margin-left: 32vmin;
+}
+      
+      
+    </style>
+    <body>
+     <p id="a"></p>  
+     <button id="btn" onclick="next()">NEXT</button> 
+     <script>
+       
+// Created by Priyangshu
+
+
+var z = 0
+var i = 0
+var message = ""
+
+setInterval(function() {
+  if (i < message.length) {
+    document.getElementById("a").innerHTML+=message.charAt(i);
+    i++;
+    
+  }
+  
+  if (i == message.length) {
+      btn.style.display = "initial"
+  }
+  
+  else {
+      btn.style.display = "none"
+  }
+  
+  switch (z) {
+      case 0:
+        message = "I am going to read your mind. Are you ready?"
+        break;
+        
+      case 1:
+        message = "Think of a number from 1 to 10"
+        break;
+        
+      case 2:
+        message = "Multiply it by 2"
+        break; 
+        
+      case 3:
+        message = "Add 8 to the number"
+        break;  
+      
+      case 4:
+        message = "Divide it by 2"
+        break;   
+      
+      case 5:
+        message = "Subtract the original number from the current number (Current number - Original number)"
+        break; 
+      
+     case 6:
+        message = "Select the letter based on your number. 1 = A, 2 = B, 3 = C ..."
+        break;
+     
+     case 7:
+        message = "Now think of the name of a country starting with the letter"
+        break;
+    
+      case 8:
+        message = "Then take the second letter from the country's name and think of an animal with it"
+        break;       
+    
+       case 9:
+        message = "What's the colour of the animal?"
+        break; 
+        
+       case 10:
+        message = "Hmm. Let me guess..."
+        break;         
+       
+       case 11:
+        message = "Did you think of a gray elephant 🐘 in Denmark? 🤔"
+        break;
+  }
+  
+  if (z == 11) {
+      btn.style.display = "none"
+  }
+  
+ }, 100)
+
+function next() {
+    a.innerHTML = ""
+    i = -1
+    z++
+}
+
+
+       
+       
+     </script>
+    </body>
+</html>
