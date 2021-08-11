@@ -1,0 +1,460 @@
+<!-- Created by ChigozirimAngela (Not My Name). -->
+
+
+
+<!-- Created by ChigozirimAngela (Not My Name).
+
+ Glassmorphism clock inspired by Mitali's. Go check it out!' -->
+
+<html id="theme-select">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multi Style Clock</title>
+  <style>
+    :root, .original {
+      --mainBg: white;
+      --cBg: white;
+      --cBorder: 15px solid grey;
+      --cBRadius: 50%;
+      --mColor: black;
+      --colColor: red;
+      --hhColor: #00ccff;
+      --mhColor: black;
+      --shColor: #ffb600;
+      --hhBRadius: 10px 10px 0px; 
+      --mhBRadius: var(--hhBRadius);
+      --shBRadius: 50% 50% 0px 0px;
+      --dColor: grey;
+      --sColor: white;
+      --svgStroke: black;
+      --svgFill: white;
+    }
+    
+    .glass {
+      --mainBgI: url('https://www.dropbox.com/s/wm9mlz32yjw4j47/rose%20art.jpeg?raw=1');
+      --mainBgSize: contain;
+      --mainBgPosition: -16vw 38.2vh;
+      --cBg: rgba(255,255,255,0.1);
+      --cBlur: blur(5px);
+      --cBorder: 1px solid rgba(255,255, 255, 0.3);
+      --cShadow: 6px 6px 30px black;
+      --mColor: white;
+      --hhColor: transparent;
+      --mhColor: var(--hhColor);
+      --shColor: var(--hhColor);
+      --hhBorder: 1px solid grey;
+      --mhBorder: var(--hhBorder);
+      --shBorder: var(--hhBorder);
+      --shBRadius: 10px 10px 0px;
+    }
+    
+    .spooky {
+      --mainBg: black;
+      --cBg: black;
+      --cBorder: none;
+      --cShadow: 9px 5px 30px #1dff00, 0px 0px 5px #1dff00;
+      --aShadow: move 1s infinite alternate-reverse;
+      --mcShadow: 10px 6px 35px #1dff00;
+      --mColor: white;
+      --mhColor: beige;
+      --svgStroke: white;
+      --svgFill: transparent;
+    }
+    
+    .paper {
+      --cBorder: none;
+      --cBRadius: none;
+      --cShadow: 5px 5px 10px #c0c0f2;
+      --mColor: white;
+      --colColor: white;
+      --colTShadow: 0px 0px 8px #c0c0f2;
+      --hhColor: transparent;
+      --mhColor: var(--hhColor);
+      --shColor: var(--hhColor); 
+      --BShadow: 0px 0px 10px lavender;
+      --dColor: transparent;
+      --dShadow: 5px 5px 10px #aa9afb, -5px -5px 10px #aa9afb;
+    }
+    
+    body {
+      background: var(--mainBg);
+      background-image: var(--mainBgI);
+      background-size: var(--mainBgSize);
+      background-position: var(--mainBgPosition);
+      background-repeat: repeat;
+      background-repeat-x: 3;
+      background-repeat-y: 3;
+      background-attachment: fixed;
+      transition: 1s;
+    }
+    
+    @media (min-width:768px) {
+      div#clock {
+        transform: scale(2.5);
+        top: 32.2vw;
+      }
+      
+      #cog:hover > #menu {
+        position: absolute;
+        bottom: 17vw;
+        background-color: green;
+      }
+    }
+    
+    #clock {
+      display: flex;
+      width: 320px;
+      height: 320px;
+      background: var(--cBg);
+      position: relative;
+      top: 22.2vw;
+      -webkit-backdrop-filter: var(--cBlur);
+      backdrop-filter: var(--cBlur);
+      border-radius: var(--cBRadius);
+      box-shadow: var(--cShadow); 
+      border: var(--cBorder);
+      margin: auto;
+      animation: var(--aShadow);
+      transition: 1s;
+    }
+    
+    @keyframes move {
+      100% {
+        box-shadow: var(--mcShadow);
+      }
+    }
+      
+    section {
+      transform-origin: 50% 150px;
+      text-align: center;
+      position: absolute;
+      left: 50%;
+      top: 10px;
+    }
+    
+    span {
+      display: block;
+      font-size: 20px;
+      position: absolute;
+      color: var(--mColor);
+      width: 3px; 
+    }
+    
+    .dd {
+      position: absolute;
+      left: -0.5rem;
+    }
+    .col {
+      color: var(--colColor);
+      text-shadow: var(--colTShadow);
+    }
+    
+    section:nth-of-type(1) {
+      transform: rotate(30deg);
+    }
+    
+    section:nth-of-type(1) .label {
+      transform: rotate(-30deg);
+    }
+    
+    section:nth-of-type(2) {
+      transform: rotate(60deg);
+    }
+    
+    section:nth-of-type(2) .label {
+      transform: rotate(-60deg);
+    }
+    
+    section:nth-of-type(3) {
+      transform: rotate(90deg);
+    }
+    
+    section:nth-of-type(3) .label {
+      transform: rotate(-90deg);
+    }
+    
+    section:nth-of-type(4) {
+      transform: rotate(120deg);
+    }
+    
+    section:nth-of-type(4) .label {
+      transform: rotate(-120deg);
+    }
+    
+    section:nth-of-type(5) {
+      transform: rotate(150deg);
+    }
+    
+    section:nth-of-type(5) .label {
+      transform: rotate(-150deg);
+    }
+    
+    section:nth-of-type(6) {
+      transform: rotate(180deg);
+    }
+    
+    section:nth-of-type(6) .label {
+      transform: rotate(-180deg);
+    }
+    
+    section:nth-of-type(7) {
+      transform: rotate(210deg);
+    }
+    
+    section:nth-of-type(7) .label {
+      transform: rotate(-210deg);
+    }
+    
+    section:nth-of-type(8) {
+      transform: rotate(240deg);
+    }
+    
+    section:nth-of-type(8) .label {
+      transform: rotate(-240deg);
+    }
+    
+    section:nth-of-type(9) {
+      transform: rotate(270deg);
+    }
+    
+    section:nth-of-type(9) .label{
+      transform: rotate(-270deg);
+    }
+    
+    section:nth-of-type(10) {
+      transform: rotate(300deg);
+    }
+    
+    section:nth-of-type(10) .label {
+      transform: rotate(-300deg);
+    }
+    
+    section:nth-of-type(11) {
+      transform: rotate(330deg);
+    }
+    section:nth-of-type(11) .label {
+      transform: rotate(-330deg);
+    }
+    section:nth-of-type(12) {
+      transform: rotate(360deg);
+    }
+    section:nth-of-type(12) .label {
+      transform: rotate(-360deg);
+    }
+    
+    .hand {
+      position: absolute;
+      transform-origin: 50% 100%;
+    }
+    
+    .hr {
+      width: 10px;
+      height: 80px;
+      background-color: var(--hhColor);
+      border: var(--hhBorder);
+      border-radius: var(--hhBRadius);
+      box-shadow: var(--BShadow);
+      left: 50%;
+      bottom: 50%;
+    }
+    
+    .min {
+      width: 7px;
+      height: 120px;
+      background-color: var(--mhColor);
+      border: var(--mhBorder);
+      border-radius: var(--mhBRadius);
+      box-shadow: var(--BShadow);
+      left: 50%;
+      bottom: 50%;
+    }
+    
+    .sec {
+      width: 3px;
+      height: 140px;
+      background-color: var(--shColor);
+      border: var(--shBorder);
+      border-radius: var(--shBRadius);
+      box-shadow: var(--BShadow);
+      left: 50%;
+      bottom: 50%;
+    }
+    
+    .dot {
+      width: 15px;
+      height: 15px;
+      background-color: var(--dColor);
+      border-radius: 50%;
+      transform-origin: 50% 100%;
+      position: absolute;
+      left: 49%;
+      bottom: 48%;
+    }
+    
+    svg {
+      stroke: var(--svgStroke);
+      stroke-width: 8px;
+      fill: var(--svgFill);
+      animation: cg 5s infinite linear;
+    }
+    
+    #cog {
+      margin-top: 0px;
+      position: relative;
+      top: -150px;
+      transform: scale(.3)
+      rotate(90deg);
+      transition: 1s;
+    }
+    
+    #cog:hover, cog:focus{
+      transform: scale(.1)
+      rotate(90deg);
+    }
+    
+    #gears, #gear, #gear svg, #gears svg{
+      transition: 1s;
+    }
+    
+     #cog:hover #gears, cog:focus #gears {
+      transform: translate(-54.79vw, -200vw);
+    }
+    
+    #cog:hover #gear, cog:focus #gear {
+      transform: translate(-54.79vw, 200vw);
+    }
+    
+    #cog:hover #gear svg, #cog:hover #gears svg, #cog:focus #gear svg, #cog:focus #gears svg {
+      fill: var(--svgFill);
+      stroke: var(--svgStroke);
+    }
+    
+    @keyframes cg {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+    
+    div#menu span {
+      position: static;
+      display: block;
+      color: var(--sColor);
+    }
+    
+    #menu {
+      transform: rotate(270deg);
+      font-size: 16px;
+      width: 0px;
+      position: absolute;
+      overflow: hidden;
+      background-color: red;
+      transition: width 1s;
+    }
+    
+    #cog:hover > #menu, #cog:focus > #menu {
+      top: 16vw;
+      box-sizing: border-box;
+      width: 274vw;
+      transform: rotate(270deg)
+      scale(1.5)
+      translateY(-38.8vw);
+    }
+    
+    #cog:hover span, #cog:focus span {
+      margin-bottom: 7.2vh;
+      font-size: 20vw;
+      font-weight: bold;
+      padding: 1.3vh;
+    }
+  
+  div#menu span:active {
+    color: blue;
+    text-shadow: 15px 15px 20px black; 
+  }  
+  </style>
+</head>
+<body>
+<div id="clock">
+  <div class="hours">
+    <section><span class="label">1</span></section>
+    <section><span class="label">2</span></section>
+    <section><span class="label col">3</span></section>
+    <section><span class="label">4</span></section>
+    <section><span class="label">5</span></section>
+    <section><span class="label col">6</span></section>
+    <section><span class="label">7</span></section>
+    <section><span class="label">8</span></section>
+    <section><span class="label col">9</span></section>
+    <section><span class="label dd">10</span></section>
+    <section><span class="label dd">11</span></section>
+    <section><span class="label col dd">12</span></section>
+  </div>
+  
+  <div class="hand hr" id="hr"></div>
+  <div class="hand min" id="min"></div>
+  <div class="hand sec" id="sec"></div>
+  
+  <div class="dot"></div>
+</div>
+
+<div id="cog">
+  <div id="gears">
+<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="cog" class="svg-inline--fa fa-cog fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<svg>
+  <path d="M487.4 315.7l-42.6-24.6c4.3-23.2 4.3-47 0-70.2l42.6-24.6c4.9-2.8 7.1-8.6 5.5-14-11.1-35.6-30-67.8-54.7-94.6-3.8-4.1-10-5.1-14.8-2.3L380.8 110c-17.9-15.4-38.5-27.3-60.8-35.1V25.8c0-5.6-3.9-10.5-9.4-11.7-36.7-8.2-74.3-7.8-109.2 0-5.5 1.2-9.4 6.1-9.4 11.7V75c-22.2 7.9-42.8 19.8-60.8 35.1L88.7 85.5c-4.9-2.8-11-1.9-14.8 2.3-24.7 26.7-43.6 58.9-54.7 94.6-1.7 5.4.6 11.2 5.5 14L67.3 221c-4.3 23.2-4.3 47 0 70.2l-42.6 24.6c-4.9 2.8-7.1 8.6-5.5 14 11.1 35.6 30 67.8 54.7 94.6 3.8 4.1 10 5.1 14.8 2.3l42.6-24.6c17.9 15.4 38.5 27.3 60.8 35.1v49.2c0 5.6 3.9 10.5 9.4 11.7 36.7 8.2 74.3 7.8 109.2 0 5.5-1.2 9.4-6.1 9.4-11.7v-49.2c22.2-7.9 42.8-19.8 60.8-35.1l42.6 24.6c4.9 2.8 11 1.9 14.8-2.3 24.7-26.7 43.6-58.9 54.7-94.6 1.5-5.5-.7-11.3-5.6-14.1zM256 336c-44.1 0-80-35.9-80-80s35.9-80 80-80 80 35.9 80 80-35.9 80-80 80z"></path>
+  </svg>
+  </svg>
+  </div>
+  
+  <div id="menu">
+    <span onclick="setTheme('glass')" class="glass">Glassmorphism </span>
+    <span onclick="setTheme('spooky')" class="spooky">Spooky</span>
+    <span onclick="setTheme('paper')" class="paper">Paper</span>
+    <span onclick="setTheme('original')" class="original">Original</span>
+  </div>
+  
+  <div id="gear">
+  <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="cog" class="svg-inline--fa fa-cog fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<svg>
+  <path d="M487.4 315.7l-42.6-24.6c4.3-23.2 4.3-47 0-70.2l42.6-24.6c4.9-2.8 7.1-8.6 5.5-14-11.1-35.6-30-67.8-54.7-94.6-3.8-4.1-10-5.1-14.8-2.3L380.8 110c-17.9-15.4-38.5-27.3-60.8-35.1V25.8c0-5.6-3.9-10.5-9.4-11.7-36.7-8.2-74.3-7.8-109.2 0-5.5 1.2-9.4 6.1-9.4 11.7V75c-22.2 7.9-42.8 19.8-60.8 35.1L88.7 85.5c-4.9-2.8-11-1.9-14.8 2.3-24.7 26.7-43.6 58.9-54.7 94.6-1.7 5.4.6 11.2 5.5 14L67.3 221c-4.3 23.2-4.3 47 0 70.2l-42.6 24.6c-4.9 2.8-7.1 8.6-5.5 14 11.1 35.6 30 67.8 54.7 94.6 3.8 4.1 10 5.1 14.8 2.3l42.6-24.6c17.9 15.4 38.5 27.3 60.8 35.1v49.2c0 5.6 3.9 10.5 9.4 11.7 36.7 8.2 74.3 7.8 109.2 0 5.5-1.2 9.4-6.1 9.4-11.7v-49.2c22.2-7.9 42.8-19.8 60.8-35.1l42.6 24.6c4.9 2.8 11 1.9 14.8-2.3 24.7-26.7 43.6-58.9 54.7-94.6 1.5-5.5-.7-11.3-5.6-14.1zM256 336c-44.1 0-80-35.9-80-80s35.9-80 80-80 80 35.9 80 80-35.9 80-80 80z"></path></svg>
+  </svg>
+  </div>
+</div> 
+
+<script>
+
+
+const secondHand = document.querySelector('.sec');
+const minsHand = document.querySelector('.min');
+const hourHand = document.querySelector('.hr');
+
+ function setDate() {
+  const time = new Date();
+
+  const seconds = time.getSeconds();
+  const secondsDegrees = ((seconds / 60) * 360);
+  secondHand.style.transform = `rotate(${secondsDegrees}deg)`;
+
+  const mins = time.getMinutes();
+  const minsDegrees = ((mins / 60) * 360) + ((seconds/60)*6);
+  minsHand.style.transform = `rotate(${minsDegrees}deg)`;
+
+  const hour = time.getHours();
+  const hourDegrees = ((hour / 12) * 360) + ((mins/60)*30);
+  hourHand.style.transform = `rotate(${hourDegrees}deg)`;
+}
+
+setInterval(setDate, 1000);
+
+setDate();
+
+// To change themes
+
+const setTheme = theme => document.documentElement.className = theme;
+ 
+document.getElementById('theme-select').addEventListener('change', function() {
+  setTheme(this.value);
+});
+</script>
+</body>
+</html> 
