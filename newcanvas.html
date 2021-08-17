@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Canvas by Rashid</title>
+      
+    </head>
+    
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width:  100;
+    height: 100;
+    background: black;
+}
+</style>
+    <body>
+        <canvas id="canvas"></canvas>
+    </body>
+    <script>
+      
+      window.onload = () => {
+    const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+const particlesArray = [];
+let hue = 0; 
+
+window.addEventListener('resize', function() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+});
+
+let mouse = {
+  x: undefined,
+  y: undefined
+}
+
+
+canvas.addEventListener('touchstart', function(e) {
+  let eObj = e.changedTouches[0];
+  mouse.x = eObj.clientX;
+  mouse.y = eObj.clientY;
+  for (let i = 0; i < 5; i++) {
+    particlesArray.push(new Particles());
+  }
+  e.preventDefault();
+});
+
+canvas.addEventListener('touchmove', function(e) {
+  let eObj = e.changedTouches[0];
+  mouse.x = eObj.clientX;
+  mouse.y = eObj.clientY;
+  for (let i = 0; i < 5; i++) {
+    particlesArray.push(new Particles());
+  }
+  e.preventDefault();
+});
+
+canvas.addEventListener('touchend', function(e) {
+  let eObj = e.changedTouches[0];
+  mouse.x = eObj.clientX;
+  mouse.y = eObj.clientY;
+  e.preventDefault();
+});
+
+class Particles {
+  constructor() {
+    this.x = mouse.x;
+    this.y = mouse.y;
+    this.size = Math.random() * 15 + 1;
+    this.color = `hsl(${hue},100%,50%)`;
+    this.speedX = Math.random() * 3 - 1.5;
+    this.speedY = Math.random() * 3 - 1.5;
+  }
+  draw() {
+    ctx.fillStyle = this.color;
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.closePath();
+  }
+  update() {
+    this.x += this.speedX;
+    this.y += this.speedY;
+    if (this.size > 0.2) this.size -= 0.1;
+  }
+}
+
+function particlesHandler() {
+  for (let i = 0; i < particlesArray.length; i++) {
+    particlesArray[i].update();
+    particlesArray[i].draw();
+    if (particlesArray[i].size <= 0.3) {
+      particlesArray.splice(i, 1);
+      i--;
+    }
+  }
+}
+
+function animate() {
+  //ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle = 'rgba(0,0,0,0.02)';
+  ctx.fillRect(0,0,canvas.width,canvas.height);
+  particlesHandler();
+  hue+=5;
+  requestAnimationFrame(animate);
+}
+
+animate();
+
+
+}
+      
+    </script>
+</html>
